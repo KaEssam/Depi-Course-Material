@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "MNF-S2-Day1/1.0.0": {
+        "runtime": {
+          "MNF-S2-Day1.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MNF-S2-Day1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
