@@ -1,0 +1,14 @@
+C:\Users\kaess\Desktop\DEPI - R3\2 - C#\1 - Session 1\MNF-S1\MNF-S1-Day2\bin\Debug\net9.0\MNF-S1-Day2.exe
+C:\Users\kaess\Desktop\DEPI - R3\2 - C#\1 - Session 1\MNF-S1\MNF-S1-Day2\bin\Debug\net9.0\MNF-S1-Day2.deps.json
+C:\Users\kaess\Desktop\DEPI - R3\2 - C#\1 - Session 1\MNF-S1\MNF-S1-Day2\bin\Debug\net9.0\MNF-S1-Day2.runtimeconfig.json
+C:\Users\kaess\Desktop\DEPI - R3\2 - C#\1 - Session 1\MNF-S1\MNF-S1-Day2\bin\Debug\net9.0\MNF-S1-Day2.dll
+C:\Users\kaess\Desktop\DEPI - R3\2 - C#\1 - Session 1\MNF-S1\MNF-S1-Day2\bin\Debug\net9.0\MNF-S1-Day2.pdb
+C:\Users\kaess\Desktop\DEPI - R3\2 - C#\1 - Session 1\MNF-S1\MNF-S1-Day2\obj\Debug\net9.0\MNF-S1-Day2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kaess\Desktop\DEPI - R3\2 - C#\1 - Session 1\MNF-S1\MNF-S1-Day2\obj\Debug\net9.0\MNF-S1-Day2.AssemblyInfoInputs.cache
+C:\Users\kaess\Desktop\DEPI - R3\2 - C#\1 - Session 1\MNF-S1\MNF-S1-Day2\obj\Debug\net9.0\MNF-S1-Day2.AssemblyInfo.cs
+C:\Users\kaess\Desktop\DEPI - R3\2 - C#\1 - Session 1\MNF-S1\MNF-S1-Day2\obj\Debug\net9.0\MNF-S1-Day2.csproj.CoreCompileInputs.cache
+C:\Users\kaess\Desktop\DEPI - R3\2 - C#\1 - Session 1\MNF-S1\MNF-S1-Day2\obj\Debug\net9.0\MNF-S1-Day2.dll
+C:\Users\kaess\Desktop\DEPI - R3\2 - C#\1 - Session 1\MNF-S1\MNF-S1-Day2\obj\Debug\net9.0\refint\MNF-S1-Day2.dll
+C:\Users\kaess\Desktop\DEPI - R3\2 - C#\1 - Session 1\MNF-S1\MNF-S1-Day2\obj\Debug\net9.0\MNF-S1-Day2.pdb
+C:\Users\kaess\Desktop\DEPI - R3\2 - C#\1 - Session 1\MNF-S1\MNF-S1-Day2\obj\Debug\net9.0\MNF-S1-Day2.genruntimeconfig.cache
+C:\Users\kaess\Desktop\DEPI - R3\2 - C#\1 - Session 1\MNF-S1\MNF-S1-Day2\obj\Debug\net9.0\ref\MNF-S1-Day2.dll
