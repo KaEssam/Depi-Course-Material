@@ -50,34 +50,44 @@ class Program
         // int x = 5;
         //
         // double y = x; //5.0
-        
+
         // explicit casting 
-        
+
         // double x = 5.5;
         //
         // int y = (int)x; //5
-        
+
         // Convert (all datatypes)
 
         // int str = 123;
         // string num = Convert.ToString(str);
         // Console.WriteLine(num);
-        
-        
+
+
         //Parse (numeric)
-        
+
         // string str = "123";
         // double num = double.Parse(str);
         // Console.WriteLine(num);
-        
-        
-        // string str = "abc";
-        // int num = int.Parse(str);
-        // Console.WriteLine(num);
 
-        
+
+        //string str = "abc";
+        //int num = int.Parse(str);
+        //Console.WriteLine(num);
+
+        //ali essam -5 
         // TryParse => self study (bouns)
-        
+
+        //string str = "abc";
+        //if (int.TryParse(str, out int number))
+        //{
+        //    Console.WriteLine(number + "convert success");
+        //}
+        //else
+        //{
+        //    Console.WriteLine("enter valild num");
+        //}
+
 
         #endregion
 
@@ -94,7 +104,7 @@ class Program
         // Console.WriteLine(a * b);  // 30
         // Console.WriteLine(a / b);  // 3
         // Console.WriteLine(a % b);  // 1
-        
+
         //#######################
         // increment & decrement
         //########################
@@ -111,7 +121,7 @@ class Program
         // Console.WriteLine(x); //11
         // Console.WriteLine(x--); //11
         // Console.WriteLine(x); //10
-        
+
         //##################
         // Assigment
         //##################
@@ -122,7 +132,7 @@ class Program
         // Console.WriteLine(x-=5); // 121
         // Console.WriteLine(x/=3); // 40
         // Console.WriteLine(x%=10); //0
-        
+
         //#################
         // Comparison
         //#################
@@ -146,7 +156,7 @@ class Program
         //#################
         // Logical
         //################
-        
+
         // bool isTrue = true;
         // bool isFalse = false;
         // bool result;
@@ -161,7 +171,7 @@ class Program
         // Console.WriteLine(result); //true
 
         // ^ 
-        
+
         // result = isTrue ^ isFalse;
         // Console.WriteLine(result); // true
         //
@@ -196,7 +206,7 @@ class Program
         //     Console.WriteLine($"{number} is odd");
         // }
 
-       
+
         // if (number % 2 == 0)
         // {
         //     if (number == 0)
@@ -212,7 +222,7 @@ class Program
         // {
         //     Console.WriteLine($"{number} is odd");
         // }
-        
+
         // if (number % 2 == 0 && number != 0)
         // {
         //     Console.WriteLine($"{number} is even");
@@ -225,8 +235,8 @@ class Program
         // {
         //     Console.WriteLine($"{number} is odd");
         // }
-        
-        
+
+
         #endregion
 
         #region ternery op
@@ -285,20 +295,20 @@ class Program
         // {
         //     Console.WriteLine(i);
         // }
-        
+
         // foreach => foreach(type variable in array)
-        
+
         // int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         //
         // foreach (double number in numbers)
         // {
         //     Console.WriteLine(number);
         // }
-        
+
         // while 
 
 
-        
+
         // do.. while
 
         // int x = 10;
@@ -310,15 +320,15 @@ class Program
 
 
         // break
-        
+
         // for (int i = 0; i <= 10; i++)
         // {   
         //     if(i ==5)
         //         break;
         //     Console.WriteLine(i);
         // }
-        
-        
+
+
         // for (int i = 0; i <= 10; i++)
         // {   
         //     if(i ==5)
@@ -342,7 +352,7 @@ class Program
         // Console.WriteLine(numbers[0]);
         // Console.WriteLine(numbers[numbers.Length-1]);
         // Console.WriteLine(numbers[^(numbers.Length)]);
-        
+
         // Console.WriteLine(numbers[0]);
         //
         // int[] copy = new int[10];
@@ -363,7 +373,7 @@ class Program
         // };
         //
         // letters[0, 0] = 'A';
-        
+
         // int[][] arr = new int[2][];
         // arr[0] = new int[2] {1,3};
         // arr[1] = new int[5]{1,2,3,4,5};
@@ -374,8 +384,8 @@ class Program
         #region methods
 
         // access modifier static return type(void) name(params){code block}
-        
-        Hello();
+
+        //Hello();
 
         // Console.WriteLine(userInfo("karim", "essam"));
         //
@@ -383,6 +393,74 @@ class Program
 
         #endregion
 
+
+        #region Passing By Value & Passing By Referance
+
+        // Passing by Value => copy data 
+
+        //int x = 5; //data
+
+        //int addFive(int num)
+        //{
+        //  return  num += 5;
+        //}
+
+        //Console.WriteLine(addFive(x)); //10 => x = 10
+        //Console.WriteLine(x); // 10
+
+        ////////// 2000 + 1000
+        ///ref
+
+        //int z = 5; // z=10
+
+        //int addFive(ref int num)
+        //{
+        //    return num += 5;
+        //}
+
+        //Console.WriteLine(addFive(ref z)); //10 => x = 10
+        //Console.WriteLine(z); // 10
+
+        //// out
+
+        //void userInfo(out string fname, out string lname)
+        //{
+        //    //data from database
+        //    fname = "ahmed";
+        //    lname = "ali";
+        //}
+
+        //string FirstName = "ahmed";
+        //string LastName = "ali";
+        //userInfo(out FirstName,out LastName);
+        //Console.WriteLine($" your first name {FirstName} dsdasdafda {LastName}");
+
+
+        //Params
+
+        //int[] nums = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+        //int sum(params int[] nums)
+        //{
+        //    int total = 0;
+
+        //    for(int i =0; i < nums.Length; i++)
+        //    {
+        //        total += nums[i];
+
+        //    }
+        //    //foreach (int n in nums)
+        //    //{
+        //    //    total += n;
+        //    //}
+        //    return total;
+        //}
+
+        //Console.WriteLine(sum(nums));
+        //Console.WriteLine(sum(10,20,30,40,50));
+
+
+        #endregion
 
 
     }

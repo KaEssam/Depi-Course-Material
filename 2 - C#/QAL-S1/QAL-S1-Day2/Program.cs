@@ -36,36 +36,49 @@ class Program
         // object obj = x; // reference
         //
         // int y = (int)obj; //unboxing
-        
-        
+
+
 
         #endregion
 
         #region Type Casting
-        
-        //implicit casting => from small datatype to bigger 
+
+        //implicit casting => from small datatype to bigger
         // int x = 20;
         // double y = x;
-        
+
         //Explicit casting
         // double x = 20.50;
-        // int y = (int)x; 
-        
-        // //Convert (ALL DATA TYPES) => STRING TO NUMS 
+        // int y = (int)x;
+
+        // //Convert (ALL DATA TYPES) => STRING TO NUMS
         //
         // string str = "123";
         // string str2 = "ABC"; // ERROR
         // int num = Convert.ToInt32(str);
         // Console.WriteLine(num);
         //
-        // // PARSE (NUMERIC ONLY) 
+        // // PARSE (NUMERIC ONLY)
         //
-        // String STR = "123";
+        // String STR = "abc";
         // int num2 = int.Parse(STR);
-        //
+
         // Console.WriteLine(num2);
-        
-        // TRY PARSE (Bouns) 
+
+        // TRY PARSE (Bouns)
+
+        // string str = "123";
+        // System.Console.WriteLine(int.TryParse(str,out int num));
+        // if (int.TryParse(str, out int num))
+        // {
+        //     System.Console.WriteLine(num);
+        // }
+        // else
+        // {
+        //     System.Console.WriteLine("invalid format");
+        // }
+
+
         #endregion
 
         #region Operatores
@@ -73,7 +86,7 @@ class Program
         // ################
         // Math => + * / - %
         //#################
-        
+
         // int a = 10, b = 3;
         //
         // Console.WriteLine(a + b);  // 13
@@ -81,8 +94,8 @@ class Program
         // Console.WriteLine(a * b);  // 30
         // Console.WriteLine(a / b);  // 3
         // Console.WriteLine(a % b);  // 1
-        
-        
+
+
         // ################
         // increment  Decrement
         //#################
@@ -100,7 +113,7 @@ class Program
         // Console.WriteLine(x); // 11
         // Console.WriteLine(x--); //11
         // Console.WriteLine(x); //10
-        
+
         // ################
         // Comparison = > < >= != ==
         //#################
@@ -120,10 +133,10 @@ class Program
         // Console.WriteLine(isNotEqualTo);
         // Console.WriteLine(isGreaterThanOrEqualTo);
         // Console.WriteLine(isLessThanOrEqualTo);
-        
-        
+
+
         // ################
-        // Logical && || 
+        // Logical && ||
         //#################
 
         // bool isTrue = true;
@@ -131,7 +144,7 @@ class Program
         // bool result;
         //
         // // && => true if both true
-        // result = isTrue && isFalse; // 
+        // result = isTrue && isFalse; //
         // Console.WriteLine(result);
         //
         // // || => true if one true
@@ -149,7 +162,7 @@ class Program
         //
         // result = isFalse ^ isFalse;
         // Console.WriteLine(result);
-        
+
 
         // int score = 10;
         // score += 5;  // score = score + 5 => 15
@@ -188,7 +201,7 @@ class Program
         // // else
         // // {
         // //     Console.WriteLine($"{number} is odd");
-        // // 
+        // //
         //
         // if (number == 0)
         //     Console.WriteLine("number is zero");
@@ -196,12 +209,12 @@ class Program
         //     Console.WriteLine($"{number} is even");
         // else
         //     Console.WriteLine($"{number} is odd");
-        
+
 
         #endregion
 
         #region ternery op
-        //  //short cut for if else 
+        //  //short cut for if else
         // //syntax => condition is true ? true result : false result
         //
         // Console.Write("Enter a number: ");
@@ -210,8 +223,8 @@ class Program
         //
         // string result =  number % 2 == 0 && number !=0 ? $"{number} is even" : "odd";
         // Console.WriteLine(result);
-        
-        
+
+
         #endregion
 
         #region  Switch
@@ -224,7 +237,7 @@ class Program
         //     Console.WriteLine("sun");
         // else if(day == 3) //false
         //     Console.WriteLine("moon");
-        // else if(day == 4) 
+        // else if(day == 4)
         //     Console.WriteLine("thu");
         // else if(day == 5)
         //     Console.WriteLine("fri");
@@ -264,9 +277,9 @@ class Program
         // {
         //     Console.WriteLine(i);
         // }
-        
+
         // foreach => foreach(type variable in array)
-        
+
         // int[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         //
         //
@@ -274,7 +287,7 @@ class Program
         // {
         //     Console.WriteLine(num);
         // }
-        
+
         // while => while (condition) {code block}
 
         // int x = 20;
@@ -284,9 +297,9 @@ class Program
         //     Console.WriteLine(x);
         //     x--;
         // }
-        
-        
-        // do .. while 
+
+
+        // do .. while
 
         // int y = 20;
         //
@@ -295,8 +308,8 @@ class Program
         //     Console.WriteLine(y);
         //     y--;
         // } while (y < 30);
-        
-        
+
+
         // // break
         //
         // for (int i = 0; i <= 10 ; i++)
@@ -319,7 +332,7 @@ class Program
         #region array
 
         // int[] x = new int[4]{1,2,3,4};
-        
+
         // int[] nums = new int[5];
         // Console.WriteLine(nums[0]);
         // nums[0] = 1;
@@ -381,9 +394,84 @@ class Program
 
 
         #endregion
-        
-        // bank project ()
+
+        #region Passing #pragma warning disable format
+
+        //passing by value
+
+        // int x = 5; // data
+
+        // void addFive(int num)
+        // {
+        //     num += 5;
+        // }
+
+        // System.Console.WriteLine(x); //5
+        // addFive(x); // x => 10
+        // System.Console.WriteLine(x);//5
+
+        //passing by reference
+
+        // ref => change data
+
+        // int x = 5; // data
+
+        // void addFive(ref int num)
+        // {
+        //     num += 5;
+        // }
+
+        // System.Console.WriteLine(x); //5
+        // addFive(ref x); // x => 10
+        // System.Console.WriteLine(x);//5
+
+        // out
+
+        // string userInfo(out string firstName, out string lastName)
+        // {
+        //     //data from database
+        //     firstName = "Ali";
+        //     lastName = "Essam";
+        //     return $"{firstName} {lastName}";
+
+        //     // Console.WriteLine($"{firstName} {lastName}");
+
+        // }
+
+        // string n1;
+        // string n2;
+        // userInfo(out n1, out n2);
+
+
+        // System.Console.WriteLine($"{n1} {n2}");
+
+
+        // userInfo("karim", "Essam");
+
+        //params
+
+        // int[] nums = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+        // int sum(params int[] nums)
+        // {
+        //     int sum = 0;
+        //     foreach (int num in nums)
+        //     {
+        //         sum += num;
+        //     }
+        //     return sum;
+        // }
+
+        // System.Console.WriteLine(sum(10,20,30,40,50,60,70,80,90,100));
+
     }
+
+
+
+    }
+        #endregion
+
+
 
     // static void hello()
     // {
@@ -399,4 +487,4 @@ class Program
     // {
     //     return $"{firstName} {lastName}";
     // }
-}
+

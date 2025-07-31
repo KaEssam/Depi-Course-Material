@@ -1,0 +1,15 @@
+C:\Users\kaess\Desktop\DEPI - R3\Depi-Course-Material\3 - OOP\QAL-S1\QAL-S1-Day1\bin\Debug\net9.0\QAL-S1-Day1.exe
+C:\Users\kaess\Desktop\DEPI - R3\Depi-Course-Material\3 - OOP\QAL-S1\QAL-S1-Day1\bin\Debug\net9.0\QAL-S1-Day1.deps.json
+C:\Users\kaess\Desktop\DEPI - R3\Depi-Course-Material\3 - OOP\QAL-S1\QAL-S1-Day1\bin\Debug\net9.0\QAL-S1-Day1.runtimeconfig.json
+C:\Users\kaess\Desktop\DEPI - R3\Depi-Course-Material\3 - OOP\QAL-S1\QAL-S1-Day1\bin\Debug\net9.0\QAL-S1-Day1.dll
+C:\Users\kaess\Desktop\DEPI - R3\Depi-Course-Material\3 - OOP\QAL-S1\QAL-S1-Day1\bin\Debug\net9.0\QAL-S1-Day1.pdb
+C:\Users\kaess\Desktop\DEPI - R3\Depi-Course-Material\3 - OOP\QAL-S1\QAL-S1-Day1\obj\Debug\net9.0\QAL-S1-Day1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kaess\Desktop\DEPI - R3\Depi-Course-Material\3 - OOP\QAL-S1\QAL-S1-Day1\obj\Debug\net9.0\QAL-S1-Day1.AssemblyInfoInputs.cache
+C:\Users\kaess\Desktop\DEPI - R3\Depi-Course-Material\3 - OOP\QAL-S1\QAL-S1-Day1\obj\Debug\net9.0\QAL-S1-Day1.AssemblyInfo.cs
+C:\Users\kaess\Desktop\DEPI - R3\Depi-Course-Material\3 - OOP\QAL-S1\QAL-S1-Day1\obj\Debug\net9.0\QAL-S1-Day1.csproj.CoreCompileInputs.cache
+C:\Users\kaess\Desktop\DEPI - R3\Depi-Course-Material\3 - OOP\QAL-S1\QAL-S1-Day1\obj\Debug\net9.0\QAL-S1-Day1.sourcelink.json
+C:\Users\kaess\Desktop\DEPI - R3\Depi-Course-Material\3 - OOP\QAL-S1\QAL-S1-Day1\obj\Debug\net9.0\QAL-S1-Day1.dll
+C:\Users\kaess\Desktop\DEPI - R3\Depi-Course-Material\3 - OOP\QAL-S1\QAL-S1-Day1\obj\Debug\net9.0\refint\QAL-S1-Day1.dll
+C:\Users\kaess\Desktop\DEPI - R3\Depi-Course-Material\3 - OOP\QAL-S1\QAL-S1-Day1\obj\Debug\net9.0\QAL-S1-Day1.pdb
+C:\Users\kaess\Desktop\DEPI - R3\Depi-Course-Material\3 - OOP\QAL-S1\QAL-S1-Day1\obj\Debug\net9.0\QAL-S1-Day1.genruntimeconfig.cache
+C:\Users\kaess\Desktop\DEPI - R3\Depi-Course-Material\3 - OOP\QAL-S1\QAL-S1-Day1\obj\Debug\net9.0\ref\QAL-S1-Day1.dll
