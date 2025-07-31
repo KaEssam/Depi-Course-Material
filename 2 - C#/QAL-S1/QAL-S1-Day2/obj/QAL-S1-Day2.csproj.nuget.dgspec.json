@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kaess\\Desktop\\DEPI - R3\\2 - C#\\1 - Session 1\\QAL-S1\\QAL-S1-Day2\\QAL-S1-Day2.csproj": {}
+    "C:\\Users\\kaess\\Desktop\\DEPI - R3\\Depi-Course-Material\\2 - C#\\QAL-S1\\QAL-S1-Day2\\QAL-S1-Day2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kaess\\Desktop\\DEPI - R3\\2 - C#\\1 - Session 1\\QAL-S1\\QAL-S1-Day2\\QAL-S1-Day2.csproj": {
+    "C:\\Users\\kaess\\Desktop\\DEPI - R3\\Depi-Course-Material\\2 - C#\\QAL-S1\\QAL-S1-Day2\\QAL-S1-Day2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kaess\\Desktop\\DEPI - R3\\2 - C#\\1 - Session 1\\QAL-S1\\QAL-S1-Day2\\QAL-S1-Day2.csproj",
+        "projectUniqueName": "C:\\Users\\kaess\\Desktop\\DEPI - R3\\Depi-Course-Material\\2 - C#\\QAL-S1\\QAL-S1-Day2\\QAL-S1-Day2.csproj",
         "projectName": "QAL-S1-Day2",
-        "projectPath": "C:\\Users\\kaess\\Desktop\\DEPI - R3\\2 - C#\\1 - Session 1\\QAL-S1\\QAL-S1-Day2\\QAL-S1-Day2.csproj",
+        "projectPath": "C:\\Users\\kaess\\Desktop\\DEPI - R3\\Depi-Course-Material\\2 - C#\\QAL-S1\\QAL-S1-Day2\\QAL-S1-Day2.csproj",
         "packagesPath": "C:\\Users\\kaess\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kaess\\Desktop\\DEPI - R3\\2 - C#\\1 - Session 1\\QAL-S1\\QAL-S1-Day2\\obj\\",
+        "outputPath": "C:\\Users\\kaess\\Desktop\\DEPI - R3\\Depi-Course-Material\\2 - C#\\QAL-S1\\QAL-S1-Day2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

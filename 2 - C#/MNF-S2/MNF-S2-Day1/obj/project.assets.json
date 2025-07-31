@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kaess\\Desktop\\DEPI - R3\\2 - C#\\1 - Session 1\\MNF-S2\\MNF-S2-Day1\\MNF-S2-Day1.csproj",
+      "projectUniqueName": "C:\\Users\\kaess\\Desktop\\DEPI - R3\\Depi-Course-Material\\2 - C#\\MNF-S2\\MNF-S2-Day1\\MNF-S2-Day1.csproj",
       "projectName": "MNF-S2-Day1",
-      "projectPath": "C:\\Users\\kaess\\Desktop\\DEPI - R3\\2 - C#\\1 - Session 1\\MNF-S2\\MNF-S2-Day1\\MNF-S2-Day1.csproj",
+      "projectPath": "C:\\Users\\kaess\\Desktop\\DEPI - R3\\Depi-Course-Material\\2 - C#\\MNF-S2\\MNF-S2-Day1\\MNF-S2-Day1.csproj",
       "packagesPath": "C:\\Users\\kaess\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kaess\\Desktop\\DEPI - R3\\2 - C#\\1 - Session 1\\MNF-S2\\MNF-S2-Day1\\obj\\",
+      "outputPath": "C:\\Users\\kaess\\Desktop\\DEPI - R3\\Depi-Course-Material\\2 - C#\\MNF-S2\\MNF-S2-Day1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

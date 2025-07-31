@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("QAL-S1-Day2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+51f0c96d796210dea81b709f47a8059d525bec09")]
 [assembly: System.Reflection.AssemblyProductAttribute("QAL-S1-Day2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("QAL-S1-Day2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

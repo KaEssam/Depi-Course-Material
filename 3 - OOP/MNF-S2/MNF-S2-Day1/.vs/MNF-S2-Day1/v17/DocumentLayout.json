@@ -1,0 +1,60 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\kaess\\Desktop\\DEPI - R3\\Depi-Course-Material\\3 - OOP\\MNF-S2\\MNF-S2-Day1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C22FCC68-CC7B-7E91-4497-B460AD2831C1}|MNF-S2-Day1.csproj|c:\\users\\kaess\\desktop\\depi - r3\\depi-course-material\\3 - oop\\mnf-s2\\mnf-s2-day1\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C22FCC68-CC7B-7E91-4497-B460AD2831C1}|MNF-S2-Day1.csproj|solutionrelative:book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C22FCC68-CC7B-7E91-4497-B460AD2831C1}|MNF-S2-Day1.csproj|c:\\users\\kaess\\desktop\\depi - r3\\depi-course-material\\3 - oop\\mnf-s2\\mnf-s2-day1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C22FCC68-CC7B-7E91-4497-B460AD2831C1}|MNF-S2-Day1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Book.cs",
+              "DocumentMoniker": "C:\\Users\\kaess\\Desktop\\DEPI - R3\\Depi-Course-Material\\3 - OOP\\MNF-S2\\MNF-S2-Day1\\Book.cs",
+              "RelativeDocumentMoniker": "Book.cs",
+              "ToolTip": "C:\\Users\\kaess\\Desktop\\DEPI - R3\\Depi-Course-Material\\3 - OOP\\MNF-S2\\MNF-S2-Day1\\Book.cs",
+              "RelativeToolTip": "Book.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-30T17:24:06.047Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\kaess\\Desktop\\DEPI - R3\\Depi-Course-Material\\3 - OOP\\MNF-S2\\MNF-S2-Day1\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\kaess\\Desktop\\DEPI - R3\\Depi-Course-Material\\3 - OOP\\MNF-S2\\MNF-S2-Day1\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAIBBwDYAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-30T17:23:06.297Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -42,40 +42,50 @@ class Program
 
         #region Type Casting
 
-        // implicit casting => smaller to lager data type 
+        // implicit casting => smaller to lager data type
 
         // int x = 20;
         //
         // double y = x;
-        
+
         // explicit casting
-        
+
         // double x = 20.50;
         //
         // int y = (int)x;
-        
+
         // convert => all data types
 
         // string str = "abc";
         // int num = Convert.ToInt32(str);
         //
         // Console.WriteLine(num);
-        
+
         // parse => numeric
-        
-        // string str = "123";
+
+        // string str = "abc";
         // int num = int.Parse(str);
-        // Console.WriteLine(num2);
-        
-        
-        //###### =>>  try parse (self study) 
-        
+        // Console.WriteLine(str);
+
+
+        //###### =>>  try parse (self study) //rawan
+
+        string num = "abc";
+        if (int.TryParse(num, out int num2))
+        {
+            Console.WriteLine(num2);
+        }
+        else
+        {
+            Console.WriteLine("invalid");
+        }
+
         #endregion
 
         #region operatores
 
         // math
-        
+
         // int a = 10, b = 3;
         //
         // Console.WriteLine(a + b);  // 13
@@ -83,13 +93,13 @@ class Program
         // Console.WriteLine(a * b);  // 30
         // Console.WriteLine(a / b);  // 3
         // Console.WriteLine(a % b);  // 1
-        
+
         //######
         // Comparison
         //######
 
         // int number = 10;
-        // // 
+        // //
         // bool isLessThan = number < 10; //False
         // bool isGreaterThan = number > 10; // false
         // bool isEqualTo = number == 10; // true
@@ -103,8 +113,8 @@ class Program
         // Console.WriteLine(isNotEqualTo);
         // Console.WriteLine(isGreaterThanOrEqualTo);
         // Console.WriteLine(isLessThanOrEqualTo);
-        
-        
+
+
         //##############
         // Logical
         //###############
@@ -134,10 +144,10 @@ class Program
         // Console.WriteLine(result); // false
         //
         //
-        // //! 
+        // //!
         // result = isTrue && !isFalse; //ture
         // Console.WriteLine(result); //false
-        
+
         //###################
         // increment & decrement
         //#####################
@@ -155,7 +165,7 @@ class Program
         // Console.WriteLine(x--); // 11
         // Console.WriteLine(x); //10
 
-        
+
         //###################
         // assigmnet
         //###################
@@ -198,7 +208,7 @@ class Program
         // {
         //     Console.WriteLine($"{number} is odd");
         // }
-        
+
         // if (number % 2 == 0 && number != 0 )
         // {
         //         Console.WriteLine($"{number} is even");
@@ -211,8 +221,8 @@ class Program
         // {
         //     Console.WriteLine($"{number} is odd");
         // }
-        
-        
+
+
         // if (number == 0)
         // {
         //     Console.WriteLine("Number is zero");
@@ -221,7 +231,7 @@ class Program
         // {
         //         Console.WriteLine($"{number} is even");
         // }
-        // else 
+        // else
         // {
         //     Console.WriteLine($"{number} is odd");
         // }
@@ -244,11 +254,11 @@ class Program
         //
         // int day = 1;
         //
-        // if (day == 1) 
+        // if (day == 1)
         // {
         //     Console.WriteLine("Sat");
         // }
-        // else if (day == 2) 
+        // else if (day == 2)
         // {
         //     Console.WriteLine("Mon");
         // }
@@ -269,7 +279,7 @@ class Program
         // switch (day)
         // {
         //     case 1:
-        //     case 6:    
+        //     case 6:
         //         Console.WriteLine("sat");
         //         break;
         //     case 2:
@@ -293,17 +303,17 @@ class Program
         // {
         //     Console.WriteLine(i);
         // }
-        
+
         //foreach => foreach(type variable in array)
-        
+
         // int[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9,10};
         //
         // foreach (int num in nums)
         // {
         //     Console.WriteLine(num);
         // }
-        
-        // while (condition) {code block} 
+
+        // while (condition) {code block}
 
         // int x = 20;
         //
@@ -313,7 +323,7 @@ class Program
         //     x++;
         // }
         //
-        // do while 
+        // do while
 
         // int x = 40;
         // do
@@ -322,7 +332,7 @@ class Program
         //     x++;
         // } while (x < 40);
 
-        
+
         //
         // for (int i = 0; i <= 10; i++)
         // {
@@ -330,7 +340,7 @@ class Program
         //         break;
         //     Console.WriteLine(i);
         // }
-        
+
         // for (int i = 0; i <= 10; i++)
         // {
         //     if(i == 5)
@@ -380,22 +390,74 @@ class Program
         // arr[0] = new int[] { 1, 2, 3 };       // First row has 3 elements
         // arr[1] = new int[] { 4, 5 };          // Second row has 2 elements
         // arr[2] = new int[] { 6, 7, 8, 9 };    // Third row has 4 elements
-        
-        
+
+
         #endregion
 
         #region methods
-        
-        // access modifier static return type(void) name(params){code block}
-        
-        hello();
 
-        Console.WriteLine(userInfo("karim","Essam"));
-        Console.WriteLine(userInfo());
+        // access modifier static return type(void) name(params){code block}
+
+        // hello();
+
+        // Console.WriteLine(userInfo("karim", "Essam"));
+        // Console.WriteLine(userInfo());
 
         #endregion
-        
-    }
+
+        #region Passing data
+
+        //REF
+
+        int x;
+
+        // void addFive(ref int num)
+        // {
+        //     num += 5; //10
+        // }
+
+        // addFive(ref x);
+        // System.Console.WriteLine(x);
+
+        // //out
+        // string name;
+
+        // void user( out string name)
+        // {
+        //     name = "karim";
+        // }
+
+        // user(out name);
+        // Console.WriteLine(name);
+
+
+        //params
+
+        // int[] nums = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+        // int sum(params int[] num)
+        // {
+        //     int sum = 0;
+        //     foreach (int n in num)
+        //     {
+        //         sum += n;
+        //     }
+        //     return sum;
+
+        // }
+
+
+        // // System.Console.WriteLine(sum(nums));
+        // System.Console.WriteLine(sum(10, 20, 30, 40, 50, 60, 70, 80, 90, 100));
+
+
+        }
+
+
+
+        #endregion
+
+
 
     public static void hello()
     {
@@ -406,12 +468,12 @@ class Program
     {
         return $"{fName} {lName}";
     }
-    
+
     public static string userInfo(string fName, string lName, int age)
     {
         return $"{fName} {lName} {age}";
     }
-    
-    
-    
+
+
+
 }
