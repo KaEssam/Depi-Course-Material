@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "QAL-S1-Day3/1.0.0": {
+        "runtime": {
+          "QAL-S1-Day3.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "QAL-S1-Day3/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
