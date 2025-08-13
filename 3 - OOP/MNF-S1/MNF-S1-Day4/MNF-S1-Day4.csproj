@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <RootNamespace>MNF_S1_Day4</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\kaess\Desktop\DEPI - R3\Depi-Course-Material\3 - OOP\MNF-S1\MNF-S1-Day4\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\kaess\Desktop\DEPI - R3\Depi-Course-Material\3 - OOP\MNF-S1\MNF-S1-Day4\.editorconfig" />
+  </ItemGroup>
+
+</Project>
