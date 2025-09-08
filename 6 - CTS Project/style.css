@@ -1,0 +1,27 @@
+/* .btn {
+  background-color: darkslateblue;
+  text-align: right;
+} */
+
+/* h1 {
+  text-align: center;
+  padding: 20px;
+} */
+
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.btn-sm {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.completed-todo {
+  text-decoration: line-through;
+  color: gray;
+  font-style: italic;
+}
