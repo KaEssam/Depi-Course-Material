@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Middelware", "Middelware\Middelware.csproj", "{2D71FB5F-D508-456A-A00D-638830ED0576}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Routing", "Routing\Routing.csproj", "{CC0EEEE0-3553-4F87-86A6-F56D36F4BB54}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D71FB5F-D508-456A-A00D-638830ED0576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D71FB5F-D508-456A-A00D-638830ED0576}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D71FB5F-D508-456A-A00D-638830ED0576}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D71FB5F-D508-456A-A00D-638830ED0576}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC0EEEE0-3553-4F87-86A6-F56D36F4BB54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC0EEEE0-3553-4F87-86A6-F56D36F4BB54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC0EEEE0-3553-4F87-86A6-F56D36F4BB54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC0EEEE0-3553-4F87-86A6-F56D36F4BB54}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {741362FA-8B9A-481C-AF47-E85A343D5D02}
+	EndGlobalSection
+EndGlobal
