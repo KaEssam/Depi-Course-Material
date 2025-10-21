@@ -1,0 +1,24 @@
+### Get all tasks
+GET https://localhost:7000/api/tasks
+
+### Get task by ID
+GET https://localhost:7000/api/tasks/1
+
+### Create a new task
+POST https://localhost:7000/api/tasks
+Content-Type: application/json
+
+{
+  "title": "Sample Task"
+}
+
+### Update a task
+PUT https://localhost:7000/api/tasks/1
+Content-Type: application/json
+
+{
+  "title": "Updated Task Title"
+}
+
+### Delete a task
+DELETE https://localhost:7000/api/tasks/1

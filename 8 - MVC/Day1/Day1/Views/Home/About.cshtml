@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "About Page";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>About.</p>
+<p>@DateTime.Now</p>
+
+@{
+    string name = "baraa";
+}
+
+<h1>@name</h1>
+
+@* <h2>@(2+3)</h2> *@
+
+
+@{
+    for(int i =0; i <10; i++)
+    {
+        <li>@i</li>
+    }
+
+}
+
+@{
+    // var names = new List<string> { "karim", "ahmed", "ali" };
+
+    foreach(var n in (List<string>)ViewData["names"])
+    {
+        <h3>@n</h3>
+    }
+}
+
+
+@* @{ *@
+@*     int num = (int)ViewData["num"];  *@
+@*  } *@
+
+<h1>@ViewData["Name"]</h1>
+@* <h1>@num</h1> *@
+
+<h3>@ViewBag.Name</h3>

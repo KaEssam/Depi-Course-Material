@@ -1,0 +1,16 @@
+﻿@model TaskItem
+
+
+<h2>Create Task - Html Helper</h2>
+
+
+@using (Html.BeginForm("CreateWithHelper", "Tasks", FormMethod.Post))
+{
+    <div>
+        @Html.LabelFor(t => t.Title, new{@class ="form-label"})
+        @Html.TextBoxFor(t => t.Title, new{@class= "form-control"})
+        @Html.ValidationMessageFor(t => t.Title,"", new {@class = "text-danger"})
+    </div>
+
+    <button type="submit"> Create Task</button>
+}
