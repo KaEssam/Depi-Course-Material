@@ -1,0 +1,17 @@
+﻿@model TaskItem
+
+
+@{
+    ViewData["Title"] = "Add Task Page";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form action="/Tasks/Create" method="post">
+    <div>
+        <label for="Title" class="mb-3">Task Title:</label>
+        <input type="text" name="Title" id="Title" value="" placeholder="Enter Task Title"/>
+    </div>
+
+    <button type="submit">Create Task</button>
+</form>
