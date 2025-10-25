@@ -19,17 +19,35 @@ namespace TMS.APIs.Controllers
         [HttpPost("register")]
         public async Task<ActionResult<AuthResponse>> Register(RegisterDto registerDto)
         {
-           var res = await _service.Register(registerDto);
+            try
+            {
+                var res = await _service.Register(registerDto);
+                return Ok(res);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = "Registration failed. Username may already exist." });
+            }
+        }
+
+
+    [HttpPost(template: "Login")]
+    public async Task<ActionResult<AuthResponse>> Login(LoginDto loginDto)
+    {
+        try
+        {
+            var res = await _service.Login(loginDto);
             return Ok(res);
         }
-
-
-        [HttpPost(template: "Login")]
-        public async Task<ActionResult<AuthResponse>> Login(LoginDto loginDto)
+        catch (UnauthorizedAccessException ex)
         {
-            await _service.Login(loginDto);
-            return Ok();
+            return Unauthorized(new { message = ex.Message });
         }
+        catch (Exception ex)
+        {
+            return StatusCode(500, new { message = "An error occurred during login" });
+        }
+    }
 
 
     }

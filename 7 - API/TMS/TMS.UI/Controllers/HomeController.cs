@@ -15,7 +15,12 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        // Redirect to Tasks if authenticated, otherwise to Login
+        if (!string.IsNullOrEmpty(HttpContext.Session.GetString("JWTToken")))
+        {
+            return RedirectToAction("Index", "Tasks");
+        }
+        return RedirectToAction("Login", "Auth");
     }
 
     public IActionResult Privacy()

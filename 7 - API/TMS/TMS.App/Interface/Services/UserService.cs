@@ -20,14 +20,25 @@ namespace TMS.App.Interface.Services
             _repository = repository;
         }
 
-        public Task<AuthResponse> Login(LoginDto loginDto)
+        public async Task<AuthResponse> Login(LoginDto loginDto)
         {
-            throw new NotImplementedException();
+            // Get user from database
+            var user = await _repository.GetUser(loginDto.PassWord, loginDto.UserName);
+
+            if (user == null)
+            {
+                throw new UnauthorizedAccessException("Invalid username or password");
+            }
+
+            // Generate token for authenticated user
+            var token = GenrateToken(user);
+
+            return new AuthResponse(token);
         }
 
         public async Task<AuthResponse> Register(RegisterDto registerDto)
         {
-            // validate 
+            // validate
 
             var user = new User
             {

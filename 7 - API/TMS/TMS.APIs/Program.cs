@@ -11,6 +11,24 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Add CORS - Allow UI to access API
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowUI", policy =>
+    {
+        policy.WithOrigins(
+                "https://localhost:5001",
+                "http://localhost:5001",
+                "https://localhost:7001",
+                "http://localhost:7001",
+                "https://localhost:5000",
+                "http://localhost:5000")
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials();
+    });
+});
+
 builder.Services.AddControllers();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -93,6 +111,10 @@ var app = builder.Build();
 
 
 app.UseHttpsRedirection();
+
+// Use CORS - must be before Authentication
+app.UseCors("AllowUI");
+
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
