@@ -1,0 +1,25 @@
+﻿@model List<TaskItem>
+
+@{
+    ViewData["Title"] = "Tasks List";
+}
+
+<H1>@ViewData["Title"]</H1>
+
+<a href="/Tasks/Create" class="btn btn-primary">Add Task</a>
+
+
+@{
+    if(Model != null)
+    {
+        foreach (var task in Model)
+        {
+            <p>@task.Title</p>
+        }
+    }
+    else
+    {
+        <p>Create Tasks</p>
+    }
+
+}

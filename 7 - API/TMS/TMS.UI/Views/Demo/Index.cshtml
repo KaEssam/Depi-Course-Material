@@ -1,0 +1,94 @@
+@model dynamic
+
+@{
+    ViewData["Title"] = "API Demo";
+}
+
+<div class="container mt-4">
+    <h2>API Demo - Testing Public & Protected Endpoints</h2>
+
+    @if (ViewBag.IsAuthenticated)
+    {
+        <div class="alert alert-success">
+            Logged in as: <strong>@ViewBag.Username</strong>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-warning">
+            Not logged in - <a href="/Auth/Login">Login here</a>
+        </div>
+    }
+
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-info">@TempData["Message"]</div>
+    }
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">@TempData["Error"]</div>
+    }
+
+    <div class="row mt-4">
+        <!-- PUBLIC ENDPOINTS -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h5>Public Endpoints (No Token)</h5>
+                </div>
+                <div class="card-body">
+                    <form asp-action="GetPublicData" method="get" class="mb-3">
+                        <button type="submit" class="btn btn-success w-100">GET Public Tasks</button>
+                    </form>
+
+                    <hr />
+
+                    <form asp-action="CreatePublicData" method="post">
+                        <input type="text" name="title" class="form-control mb-2" placeholder="Task title" required />
+                        <button type="submit" class="btn btn-success w-100">POST Create Task</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- PROTECTED ENDPOINTS -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-danger text-white">
+                    <h5>Protected Endpoints (With Token)</h5>
+                </div>
+                <div class="card-body">
+                    <form asp-action="GetProtectedData" method="get" class="mb-3">
+                        <button type="submit" class="btn btn-danger w-100" disabled="@(!ViewBag.IsAuthenticated)">
+                            GET Protected Tasks
+                        </button>
+                    </form>
+
+                    <hr />
+
+                    <form asp-action="DeleteProtectedData" method="post">
+                        <input type="number" name="id" class="form-control mb-2" placeholder="Task ID" value="1" />
+                        <button type="submit" class="btn btn-danger w-100" disabled="@(!ViewBag.IsAuthenticated)">
+                            DELETE Task
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RESULTS -->
+    @if (ViewBag.Result != null)
+    {
+        <div class="card mt-4">
+            <div class="card-header bg-info text-white">
+                <h5>Result</h5>
+            </div>
+            <div class="card-body">
+                <pre>@ViewBag.Result</pre>
+            </div>
+        </div>
+    }
+</div>
+

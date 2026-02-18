@@ -1,0 +1,15 @@
+﻿@model TaskItem
+
+<h2>Edit Task</h2>
+
+
+<form asp-controller="Tasks" asp-action="Edit" asp-route-id="@Model.Id" method="post">
+
+    <div>
+        <label asp-for="Title">Title: </label>
+        <input asp-for="Title" class="form-control" placeholder="Enter Title" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

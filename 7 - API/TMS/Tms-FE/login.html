@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Task Management System</title>
+    <!-- Bootstrap CSS CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .login-container {
+        max-width: 400px;
+        width: 100%;
+        padding: 30px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+      .login-header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .login-header h2 {
+        color: #0d6efd;
+        font-weight: 600;
+      }
+      .form-control:focus {
+        border-color: #0d6efd;
+        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+      }
+      .btn-login {
+        background-color: #0d6efd;
+        border: none;
+        padding: 10px;
+        font-weight: 500;
+      }
+      .btn-login:hover {
+        background-color: #0b5ed7;
+      }
+      .register-link {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .alert {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+          <div class="login-container">
+            <div class="login-header">
+              <h2><i class="bi bi-box-arrow-in-right"></i> Login</h2>
+              <p class="text-muted">
+                Enter your credentials to access your account
+              </p>
+            </div>
+
+            <div id="loginAlert" class="alert alert-danger" role="alert"></div>
+
+            <form id="loginForm">
+              <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <div class="input-group">
+                  <span class="input-group-text"
+                    ><i class="bi bi-person"></i
+                  ></span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="username"
+                    placeholder="Enter your username"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <div class="input-group">
+                  <span class="input-group-text"
+                    ><i class="bi bi-lock"></i
+                  ></span>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    placeholder="Enter your password"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="mb-3 form-check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="rememberMe"
+                />
+                <label class="form-check-label" for="rememberMe"
+                  >Remember me</label
+                >
+              </div>
+
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary btn-login">
+                  <span
+                    id="loginSpinner"
+                    class="spinner-border spinner-border-sm d-none"
+                    role="status"
+                    aria-hidden="true"
+                  ></span>
+                  Login
+                </button>
+              </div>
+            </form>
+
+            <div class="register-link">
+              <p>
+                Don't have an account? <a href="register.html">Register here</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- App.js for API integration -->
+    <script src="app.js"></script>
+    <script>
+      document
+        .getElementById('loginForm')
+        .addEventListener('submit', async function (e) {
+          e.preventDefault();
+
+          const username = document.getElementById('username').value;
+          const password = document.getElementById('password').value;
+          const alertElement = document.getElementById('loginAlert');
+          const spinner = document.getElementById('loginSpinner');
+
+          // Show spinner
+          spinner.classList.remove('d-none');
+
+          try {
+            const result = await loginUser(username, password);
+
+            if (result.success) {
+              // Redirect to dashboard or home page
+              window.location.href = 'dashboard.html';
+            } else {
+              // Show error message
+              alertElement.textContent =
+                result.message ||
+                'Login failed. Please check your credentials.';
+              alertElement.style.display = 'block';
+            }
+          } catch (error) {
+            alertElement.textContent =
+              'An error occurred during login. Please try again.';
+            alertElement.style.display = 'block';
+          } finally {
+            // Hide spinner
+            spinner.classList.add('d-none');
+          }
+        });
+    </script>
+  </body>
+</html>
+

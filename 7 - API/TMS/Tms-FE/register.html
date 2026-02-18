@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - Task Management System</title>
+    <!-- Bootstrap CSS CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .register-container {
+        max-width: 450px;
+        width: 100%;
+        padding: 30px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+      .register-header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      .register-header h2 {
+        color: #0d6efd;
+        font-weight: 600;
+      }
+      .form-control:focus {
+        border-color: #0d6efd;
+        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+      }
+      .btn-register {
+        background-color: #0d6efd;
+        border: none;
+        padding: 10px;
+        font-weight: 500;
+      }
+      .btn-register:hover {
+        background-color: #0b5ed7;
+      }
+      .login-link {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .password-strength {
+        height: 5px;
+        margin-top: 5px;
+        border-radius: 3px;
+        transition: all 0.3s;
+      }
+      .alert {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+          <div class="register-container">
+            <div class="register-header">
+              <h2><i class="bi bi-person-plus"></i> Create Account</h2>
+              <p class="text-muted">
+                Join us today and start managing your tasks
+              </p>
+            </div>
+
+            <div
+              id="registerAlert"
+              class="alert alert-danger"
+              role="alert"
+            ></div>
+            <div
+              id="successAlert"
+              class="alert alert-success"
+              role="alert"
+            ></div>
+
+            <form id="registerForm">
+              <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <div class="input-group">
+                  <span class="input-group-text"
+                    ><i class="bi bi-person"></i
+                  ></span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="username"
+                    placeholder="Choose a username"
+                    required
+                  />
+                </div>
+                <div class="form-text">
+                  Username must be at least 3 characters long
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <div class="input-group">
+                  <span class="input-group-text"
+                    ><i class="bi bi-lock"></i
+                  ></span>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    placeholder="Create a password"
+                    required
+                  />
+                  <button
+                    class="btn btn-outline-secondary"
+                    type="button"
+                    id="togglePassword"
+                  >
+                    <i class="bi bi-eye" id="passwordIcon"></i>
+                  </button>
+                </div>
+                <div class="password-strength" id="passwordStrength"></div>
+                <div class="form-text">
+                  Password must be at least 6 characters long
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="confirmPassword" class="form-label"
+                  >Confirm Password</label
+                >
+                <div class="input-group">
+                  <span class="input-group-text"
+                    ><i class="bi bi-lock-fill"></i
+                  ></span>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="confirmPassword"
+                    placeholder="Confirm your password"
+                    required
+                  />
+                </div>
+                <div class="invalid-feedback">Passwords do not match</div>
+              </div>
+
+              <div class="mb-3 form-check">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="agreeTerms"
+                  required
+                />
+                <label class="form-check-label" for="agreeTerms">
+                  I agree to the
+                  <a
+                    href="#"
+                    data-bs-toggle="modal"
+                    data-bs-target="#termsModal"
+                    >Terms and Conditions</a
+                  >
+                </label>
+              </div>
+
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary btn-register">
+                  <span
+                    id="registerSpinner"
+                    class="spinner-border spinner-border-sm d-none"
+                    role="status"
+                    aria-hidden="true"
+                  ></span>
+                  Create Account
+                </button>
+              </div>
+            </form>
+
+            <div class="login-link">
+              <p>
+                Already have an account? <a href="login.html">Login here</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Terms Modal -->
+    <div
+      class="modal fade"
+      id="termsModal"
+      tabindex="-1"
+      aria-labelledby="termsModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="termsModalLabel">
+              Terms and Conditions
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>By using this Task Management System, you agree to:</p>
+            <ul>
+              <li>Provide accurate information when registering</li>
+              <li>Keep your password secure</li>
+              <li>Use the system for legitimate purposes</li>
+              <li>Respect the privacy of other users</li>
+            </ul>
+            <p>
+              We reserve the right to terminate accounts that violate these
+              terms.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              I Agree
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- App.js for API integration -->
+    <script src="app.js"></script>
+    <script>
+      // Toggle password visibility
+      document
+        .getElementById('togglePassword')
+        .addEventListener('click', function () {
+          const passwordInput = document.getElementById('password');
+          const passwordIcon = document.getElementById('passwordIcon');
+
+          if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            passwordIcon.classList.remove('bi-eye');
+            passwordIcon.classList.add('bi-eye-slash');
+          } else {
+            passwordInput.type = 'password';
+            passwordIcon.classList.remove('bi-eye-slash');
+            passwordIcon.classList.add('bi-eye');
+          }
+        });
+
+      // Password strength checker
+      document
+        .getElementById('password')
+        .addEventListener('input', function () {
+          const password = this.value;
+          const strengthBar = document.getElementById('passwordStrength');
+
+          let strength = 0;
+          if (password.length >= 6) strength += 25;
+          if (password.length >= 10) strength += 25;
+          if (/[A-Z]/.test(password) && /[a-z]/.test(password)) strength += 25;
+          if (/[0-9]/.test(password)) strength += 12.5;
+          if (/[^A-Za-z0-9]/.test(password)) strength += 12.5;
+
+          strengthBar.style.width = strength + '%';
+
+          if (strength < 30) {
+            strengthBar.style.backgroundColor = '#dc3545'; // Red
+          } else if (strength < 60) {
+            strengthBar.style.backgroundColor = '#ffc107'; // Yellow
+          } else if (strength < 80) {
+            strengthBar.style.backgroundColor = '#0dcaf0'; // Cyan
+          } else {
+            strengthBar.style.backgroundColor = '#198754'; // Green
+          }
+        });
+
+      // Form validation
+      document
+        .getElementById('confirmPassword')
+        .addEventListener('input', function () {
+          const password = document.getElementById('password').value;
+          const confirmPassword = this.value;
+
+          if (password !== confirmPassword) {
+            this.classList.add('is-invalid');
+          } else {
+            this.classList.remove('is-invalid');
+            this.classList.add('is-valid');
+          }
+        });
+
+      // Form submission
+      document
+        .getElementById('registerForm')
+        .addEventListener('submit', async function (e) {
+          e.preventDefault();
+
+          const username = document.getElementById('username').value;
+          const password = document.getElementById('password').value;
+          const confirmPassword =
+            document.getElementById('confirmPassword').value;
+          const alertElement = document.getElementById('registerAlert');
+          const successElement = document.getElementById('successAlert');
+          const spinner = document.getElementById('registerSpinner');
+
+          // Reset alerts
+          alertElement.style.display = 'none';
+          successElement.style.display = 'none';
+
+          // Validate passwords match
+          if (password !== confirmPassword) {
+            alertElement.textContent = 'Passwords do not match.';
+            alertElement.style.display = 'block';
+            return;
+          }
+
+          // Validate password length
+          if (password.length < 6) {
+            alertElement.textContent =
+              'Password must be at least 6 characters long.';
+            alertElement.style.display = 'block';
+            return;
+          }
+
+          // Validate username length
+          if (username.length < 3) {
+            alertElement.textContent =
+              'Username must be at least 3 characters long.';
+            alertElement.style.display = 'block';
+            return;
+          }
+
+          // Show spinner
+          spinner.classList.remove('d-none');
+
+          try {
+            const result = await registerUser(username, password);
+
+            if (result.success) {
+              successElement.textContent =
+                'Registration successful! Redirecting to login page...';
+              successElement.style.display = 'block';
+
+              // Redirect to login page after 2 seconds
+              setTimeout(() => {
+                window.location.href = 'login.html';
+              }, 2000);
+            } else {
+              alertElement.textContent =
+                result.message || 'Registration failed. Please try again.';
+              alertElement.style.display = 'block';
+            }
+          } catch (error) {
+            alertElement.textContent =
+              'An error occurred during registration. Please try again.';
+            alertElement.style.display = 'block';
+          } finally {
+            // Hide spinner
+            spinner.classList.add('d-none');
+          }
+        });
+    </script>
+  </body>
+</html>
+

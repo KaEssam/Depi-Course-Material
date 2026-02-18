@@ -1,0 +1,752 @@
+{
+  "$id": "https://mentora.api/schemas/api-schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Mentora API Complete Schema Specification",
+  "description": "Complete JSON schema specification for Mentora mentoring platform API",
+  "type": "object",
+  "definitions": {
+    "ErrorSchema": {
+      "$id": "https://mentora.api/schemas/error.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "Error Response",
+      "description": "Standard error response format for API errors",
+      "type": "object",
+      "properties": {
+        "error": {
+          "type": "string",
+          "description": "Error message describing what went wrong",
+          "example": "Invalid email or password"
+        },
+        "code": {
+          "type": "string",
+          "description": "Error code for programmatic handling",
+          "example": "INVALID_CREDENTIALS"
+        },
+        "details": {
+          "type": "array",
+          "description": "Additional error details for validation errors",
+          "items": {
+            "type": "object",
+            "properties": {
+              "field": {
+                "type": "string",
+                "description": "Field name that has validation error",
+                "example": "Email"
+              },
+              "message": {
+                "type": "string",
+                "description": "Validation error message",
+                "example": "Email is required"
+              }
+            }
+          }
+        }
+      },
+      "required": ["error"],
+      "additionalProperties": false
+    },
+    "SessionType": {
+      "$id": "https://mentora.api/schemas/session-type.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "Session Type",
+      "description": "Type of mentoring session",
+      "type": "string",
+      "enum": ["OneOnOne", "Group", "Workshop", "QandA"],
+      "example": "OneOnOne"
+    },
+    "SessionStatus": {
+      "$id": "https://mentora.api/schemas/session-status.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "Session Status",
+      "description": "Current status of a mentoring session",
+      "type": "string",
+      "enum": ["Scheduled", "Pending", "Confirmed", "InProgress", "Completed", "Cancelled", "NoShow"],
+      "example": "Scheduled"
+    },
+    "UserDto": {
+      "$id": "https://mentora.api/schemas/user-dto.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "User DTO",
+      "description": "User data transfer object for API responses",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique user identifier",
+          "example": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "User's email address",
+          "example": "john.doe@example.com"
+        },
+        "firstName": {
+          "type": "string",
+          "description": "User's first name",
+          "example": "John"
+        },
+        "lastName": {
+          "type": "string",
+          "description": "User's last name",
+          "example": "Doe"
+        },
+        "bio": {
+          "type": "string",
+          "description": "User's biography or professional summary",
+          "example": "Senior software engineer with 10 years of experience"
+        },
+        "profileImageUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to user's profile image",
+          "example": "https://example.com/images/profiles/john-doe.jpg"
+        },
+        "title": {
+          "type": "string",
+          "description": "Professional title",
+          "example": "Senior Software Engineer"
+        },
+        "company": {
+          "type": "string",
+          "description": "Current company",
+          "example": "Tech Corp"
+        },
+        "location": {
+          "type": "string",
+          "description": "User's location",
+          "example": "San Francisco, CA"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Account creation timestamp (ISO 8601 format)",
+          "example": "2024-01-01T10:00:00Z"
+        },
+        "skills": {
+          "type": "string",
+          "description": "Comma-separated list of skills",
+          "example": "JavaScript, React, Node.js, Python"
+        },
+        "languages": {
+          "type": "string",
+          "description": "Comma-separated list of languages",
+          "example": "English, Spanish"
+        },
+        "experienceYears": {
+          "type": "integer",
+          "description": "Years of professional experience",
+          "example": 10
+        },
+        "education": {
+          "type": "string",
+          "description": "Educational background",
+          "example": "BS in Computer Science"
+        },
+        "socialMedia": {
+          "type": "string",
+          "description": "Social media links or handles",
+          "example": "LinkedIn: linkedin.com/in/johndoe"
+        }
+      },
+      "required": ["id", "email", "firstName", "lastName", "createdAt", "experienceYears"],
+      "additionalProperties": false
+    },
+    "UserEntity": {
+      "$id": "https://mentora.api/schemas/user-entity.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "User Entity",
+      "description": "Complete user entity with navigation properties",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique user identifier",
+          "example": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "User's email address",
+          "example": "john.doe@example.com"
+        },
+        "firstName": {
+          "type": "string",
+          "description": "User's first name",
+          "example": "John"
+        },
+        "lastName": {
+          "type": "string",
+          "description": "User's last name",
+          "example": "Doe"
+        },
+        "bio": {
+          "type": "string",
+          "description": "User's biography or professional summary",
+          "example": "Senior software engineer with 10 years of experience"
+        },
+        "profileImageUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to user's profile image",
+          "example": "https://example.com/images/profiles/john-doe.jpg"
+        },
+        "title": {
+          "type": "string",
+          "description": "Professional title",
+          "example": "Senior Software Engineer"
+        },
+        "company": {
+          "type": "string",
+          "description": "Current company",
+          "example": "Tech Corp"
+        },
+        "location": {
+          "type": "string",
+          "description": "User's location",
+          "example": "San Francisco, CA"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Account creation timestamp (ISO 8601 format)",
+          "example": "2024-01-01T10:00:00Z"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last update timestamp (ISO 8601 format)",
+          "example": "2024-01-15T14:30:00Z"
+        },
+        "skills": {
+          "type": "string",
+          "description": "Comma-separated list of skills",
+          "example": "JavaScript, React, Node.js, Python"
+        },
+        "languages": {
+          "type": "string",
+          "description": "Comma-separated list of languages",
+          "example": "English, Spanish"
+        },
+        "experienceYears": {
+          "type": "integer",
+          "description": "Years of professional experience",
+          "example": 10
+        },
+        "education": {
+          "type": "string",
+          "description": "Educational background",
+          "example": "BS in Computer Science"
+        },
+        "socialMedia": {
+          "type": "string",
+          "description": "Social media links or handles",
+          "example": "LinkedIn: linkedin.com/in/johndoe"
+        },
+        "mentorSessions": {
+          "type": "array",
+          "description": "Sessions where user is the mentor",
+          "items": {
+            "$ref": "#/definitions/ResponseSessionDto"
+          }
+        },
+        "mentorBookings": {
+          "type": "array",
+          "description": "Bookings where user is the mentor",
+          "items": {
+            "type": "object",
+            "description": "Booking entity structure"
+          }
+        },
+        "menteeBookings": {
+          "type": "array",
+          "description": "Bookings where user is the mentee",
+          "items": {
+            "type": "object",
+            "description": "Booking entity structure"
+          }
+        }
+      },
+      "required": ["id", "firstName", "lastName", "createdAt", "updatedAt", "experienceYears"],
+      "additionalProperties": false
+    },
+    "UserProfileDto": {
+      "$id": "https://mentora.api/schemas/user-profile-dto.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "User Profile DTO",
+      "description": "User profile data transfer object",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique user identifier",
+          "example": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "User's email address",
+          "example": "john.doe@example.com"
+        },
+        "firstName": {
+          "type": "string",
+          "description": "User's first name",
+          "example": "John"
+        },
+        "lastName": {
+          "type": "string",
+          "description": "User's last name",
+          "example": "Doe"
+        },
+        "bio": {
+          "type": "string",
+          "description": "User's biography or professional summary",
+          "example": "Senior software engineer with 10 years of experience"
+        },
+        "profileImageUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to user's profile image",
+          "example": "https://example.com/images/profiles/john-doe.jpg"
+        },
+        "title": {
+          "type": "string",
+          "description": "Professional title",
+          "example": "Senior Software Engineer"
+        },
+        "company": {
+          "type": "string",
+          "description": "Current company",
+          "example": "Tech Corp"
+        },
+        "location": {
+          "type": "string",
+          "description": "User's location",
+          "example": "San Francisco, CA"
+        },
+        "skills": {
+          "type": "string",
+          "description": "Comma-separated list of skills",
+          "example": "JavaScript, React, Node.js, Python"
+        },
+        "languages": {
+          "type": "string",
+          "description": "Comma-separated list of languages",
+          "example": "English, Spanish"
+        },
+        "experienceYears": {
+          "type": "integer",
+          "description": "Years of professional experience",
+          "example": 10
+        },
+        "education": {
+          "type": "string",
+          "description": "Educational background",
+          "example": "BS in Computer Science"
+        },
+        "socialMedia": {
+          "type": "string",
+          "description": "Social media links or handles",
+          "example": "LinkedIn: linkedin.com/in/johndoe"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Account creation timestamp (ISO 8601 format)",
+          "example": "2024-01-01T10:00:00Z"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last update timestamp (ISO 8601 format)",
+          "example": "2024-01-15T14:30:00Z"
+        }
+      },
+      "required": ["id", "firstName", "lastName", "createdAt", "updatedAt", "experienceYears"],
+      "additionalProperties": false
+    },
+    "ResponseSessionDto": {
+      "$id": "https://mentora.api/schemas/response-session-dto.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "Response Session DTO",
+      "description": "Session data transfer object for API responses",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Unique session identifier",
+          "example": 123
+        },
+        "mentorId": {
+          "type": "string",
+          "description": "Unique mentor identifier",
+          "example": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+        },
+        "startAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Session start time (ISO 8601 format)",
+          "example": "2024-01-15T14:30:00Z"
+        },
+        "endAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Session end time (ISO 8601 format)",
+          "example": "2024-01-15T15:30:00Z"
+        },
+        "status": {
+          "$ref": "#/definitions/SessionStatus"
+        },
+        "type": {
+          "$ref": "#/definitions/SessionType"
+        },
+        "price": {
+          "type": "number",
+          "format": "decimal",
+          "description": "Session price in USD",
+          "example": 50.00
+        },
+        "notes": {
+          "type": "string",
+          "description": "Session notes or description",
+          "example": "Introduction to web development basics"
+        }
+      },
+      "required": ["id", "mentorId", "startAt", "endAt", "status", "type", "price"],
+      "additionalProperties": false
+    },
+    "RegisterRequest": {
+      "$id": "https://mentora.api/schemas/register-request.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "Register Request",
+      "description": "Request body for user registration",
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "format": "email",
+          "maxLength": 255,
+          "description": "User's email address",
+          "example": "john.doe@example.com"
+        },
+        "firstName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "description": "User's first name",
+          "example": "John"
+        },
+        "lastName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "description": "User's last name",
+          "example": "Doe"
+        },
+        "password": {
+          "type": "string",
+          "minLength": 8,
+          "maxLength": 100,
+          "description": "User's password (minimum 8 characters)",
+          "example": "SecurePass123!"
+        }
+      },
+      "required": ["email", "firstName", "lastName", "password"],
+      "additionalProperties": false
+    },
+    "LoginRequest": {
+      "$id": "https://mentora.api/schemas/login-request.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "Login Request",
+      "description": "Request body for user login",
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "User's email address",
+          "example": "john.doe@example.com"
+        },
+        "password": {
+          "type": "string",
+          "description": "User's password",
+          "example": "SecurePass123!"
+        }
+      },
+      "required": ["email", "password"],
+      "additionalProperties": false
+    },
+    "RefreshTokenRequest": {
+      "$id": "https://mentora.api/schemas/refresh-token-request.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "Refresh Token Request",
+      "description": "Request body for refreshing JWT tokens",
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string",
+          "description": "Current JWT access token",
+          "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+        },
+        "refreshToken": {
+          "type": "string",
+          "description": "Current refresh token",
+          "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+        }
+      },
+      "required": ["token", "refreshToken"],
+      "additionalProperties": false
+    },
+    "AuthResponse": {
+      "$id": "https://mentora.api/schemas/auth-response.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "Auth Response",
+      "description": "Authentication response with JWT tokens and user info",
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string",
+          "description": "JWT access token",
+          "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+        },
+        "refreshToken": {
+          "type": "string",
+          "description": "JWT refresh token for token renewal",
+          "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+        },
+        "expiration": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Token expiration timestamp (ISO 8601 format)",
+          "example": "2024-01-01T12:00:00Z"
+        },
+        "user": {
+          "$ref": "#/definitions/UserDto"
+        }
+      },
+      "required": ["token", "refreshToken", "expiration", "user"],
+      "additionalProperties": false
+    },
+    "LogoutResponse": {
+      "$id": "https://mentora.api/schemas/logout-response.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "Logout Response",
+      "description": "Response for successful logout",
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string",
+          "description": "Success message",
+          "example": "Logged out successfully"
+        }
+      },
+      "required": ["message"],
+      "additionalProperties": false
+    },
+    "CreateSessionRequest": {
+      "$id": "https://mentora.api/schemas/create-session-request.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "Create Session Request",
+      "description": "Request body for creating a new mentoring session",
+      "type": "object",
+      "properties": {
+        "startAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Session start time (ISO 8601 format)",
+          "example": "2024-01-15T14:30:00Z"
+        },
+        "type": {
+          "$ref": "#/definitions/SessionType"
+        },
+        "price": {
+          "type": "number",
+          "format": "decimal",
+          "description": "Session price in USD",
+          "example": 50.00
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 1000,
+          "description": "Optional session notes or description",
+          "example": "Introduction to web development basics"
+        }
+      },
+      "required": ["startAt", "type", "price"],
+      "additionalProperties": false
+    },
+    "SessionIdParameter": {
+      "$id": "https://mentora.api/schemas/session-id-parameter.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "Session ID Parameter",
+      "description": "Route parameter for session ID",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Unique session identifier",
+          "example": 123
+        }
+      },
+      "required": ["id"],
+      "additionalProperties": false
+    },
+    "DeleteSessionResponse": {
+      "$id": "https://mentora.api/schemas/delete-session-response.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "Delete Session Response",
+      "description": "Response for successful session deletion",
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string",
+          "description": "Success message",
+          "example": "Session deleted successfully"
+        }
+      },
+      "required": ["message"],
+      "additionalProperties": false
+    },
+    "UserIdParameter": {
+      "$id": "https://mentora.api/schemas/user-id-parameter.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "User ID Parameter",
+      "description": "Route parameter for user ID",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique user identifier",
+          "example": "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+        }
+      },
+      "required": ["id"],
+      "additionalProperties": false
+    },
+    "UpdateProfileRequest": {
+      "$id": "https://mentora.api/schemas/update-profile-request.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "Update Profile Request",
+      "description": "Request body for updating user profile",
+      "type": "object",
+      "properties": {
+        "firstName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "description": "User's first name",
+          "example": "John"
+        },
+        "lastName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "description": "User's last name",
+          "example": "Doe"
+        },
+        "bio": {
+          "type": "string",
+          "description": "User's biography or professional summary",
+          "example": "Senior software engineer with 10 years of experience"
+        },
+        "title": {
+          "type": "string",
+          "description": "Professional title",
+          "example": "Senior Software Engineer"
+        },
+        "company": {
+          "type": "string",
+          "description": "Current company",
+          "example": "Tech Corp"
+        },
+        "location": {
+          "type": "string",
+          "description": "User's location",
+          "example": "San Francisco, CA"
+        },
+        "skills": {
+          "type": "string",
+          "description": "Comma-separated list of skills",
+          "example": "JavaScript, React, Node.js, Python"
+        },
+        "languages": {
+          "type": "string",
+          "description": "Comma-separated list of languages",
+          "example": "English, Spanish"
+        },
+        "experienceYears": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Years of professional experience",
+          "example": 10
+        },
+        "education": {
+          "type": "string",
+          "description": "Educational background",
+          "example": "BS in Computer Science"
+        },
+        "socialMedia": {
+          "type": "string",
+          "description": "Social media links or handles",
+          "example": "LinkedIn: linkedin.com/in/johndoe"
+        },
+        "profileImage": {
+          "type": "string",
+          "format": "binary",
+          "description": "Profile image file (multipart form data)",
+          "contentEncoding": "base64"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UserSearchParameters": {
+      "$id": "https://mentora.api/schemas/user-search-parameters.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "User Search Parameters",
+      "description": "Query parameters for user search",
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Search query for name, bio, or title",
+          "example": "software engineer"
+        },
+        "skills": {
+          "type": "string",
+          "description": "Filter by skills (comma-separated)",
+          "example": "JavaScript,React"
+        },
+        "location": {
+          "type": "string",
+          "description": "Filter by location",
+          "example": "San Francisco"
+        }
+      },
+      "additionalProperties": false
+    },
+    "UserSearchResponse": {
+      "$id": "https://mentora.api/schemas/user-search-response.json",
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "User Search Response",
+      "description": "Response containing list of users matching search criteria",
+      "type": "object",
+      "properties": {
+        "users": {
+          "type": "array",
+          "description": "Array of users matching search criteria",
+          "items": {
+            "$ref": "#/definitions/UserEntity"
+          }
+        },
+        "totalCount": {
+          "type": "integer",
+          "description": "Total number of users found",
+          "example": 25
+        }
+      },
+      "required": ["users", "totalCount"],
+      "additionalProperties": false
+    }
+  }
+}

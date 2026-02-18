@@ -1,0 +1,25 @@
+﻿@model TaskItem
+
+
+@{
+    ViewData["Title"] = "Add Task Page";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+
+<form asp-controller="Tasks" asp-action="Save" method= "post">
+
+
+
+    
+    <lable asp-for="Id">Id: </lable>
+    <input asp-for="Id" class="form-control" />
+
+
+    <lable asp-for="Title">Title: </lable>
+    <input asp-for="Title" class="form-control" />
+
+    <input type="submit" value="Create" />
+
+</form>

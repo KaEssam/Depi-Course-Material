@@ -1,0 +1,18 @@
+{
+  "name": "mentora-frontend",
+  "version": "1.0.0",
+  "description": "Mentora - Frontend application for mentorship platform",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./public/css/input.css -o ./public/css/styles.css --watch",
+    "build": "npx tailwindcss -i ./public/css/input.css -o ./public/css/styles.css --minify"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.0",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24"
+  },
+  "keywords": ["mentorship", "frontend", "education"],
+  "author": "Mentora Team",
+  "license": "MIT"
+}
