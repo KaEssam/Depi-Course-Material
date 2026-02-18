@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Day1.styles.css" asp-append-version="true" />
+<<<<<<< HEAD
 </head>
 <body>
     <header>
@@ -15,32 +16,132 @@
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Day1</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
+=======
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    @await RenderSectionAsync("Styles", required: false)
+    <style>
+        :root {
+        --primary-color: #2563eb;
+        --bg-dark: #111827;
+        --text-light: #f3f4f6;
+        }
+        body {
+        font-family: 'Inter', sans-serif;
+        }
+        .navbar {
+        background-color: var(--bg-dark) !important;
+        padding: 1rem 0;
+        }
+        .navbar-brand, .nav-link {
+        color: var(--text-light) !important;
+        font-weight: 500;
+        }
+        .nav-link:hover {
+        color: var(--primary-color) !important;
+        transition: color 0.2s ease;
+        }
+        .footer {
+        background-color: var(--bg-dark);
+        color: var(--text-light);
+        padding: 1.5rem 0;
+        }
+        .footer a {
+        color: var(--primary-color);
+        text-decoration: none;
+        }
+        .container {
+        max-width: 1200px;
+        padding: 2rem 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark shadow-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-calendar-check me-2" viewBox="0 0 16 16">
+                        <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                    </svg>
+                    Day1
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+>>>>>>> 6637ba3848b8a5abbbf0993260116f21b21a1fa6
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
+<<<<<<< HEAD
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+=======
+                        @if(User.Identity.IsAuthenticated == true){
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Tasks" asp-action="Index">Tasks</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            </li>
+
+                            <li class="nav-item">
+                                @User.Identity.Name
+                            </li>
+
+                            <li class="nav-item">
+                                <form method="post" asp-controller="Account" asp-action="Logout">
+                                   <button type="submit">Logout</button>
+                                </form>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Register">Register</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+                            </li>
+                        }
+
+                        
+>>>>>>> 6637ba3848b8a5abbbf0993260116f21b21a1fa6
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6637ba3848b8a5abbbf0993260116f21b21a1fa6
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
+<<<<<<< HEAD
     <footer class="border-top footer text-muted">
+=======
+    <footer class="footer">
+>>>>>>> 6637ba3848b8a5abbbf0993260116f21b21a1fa6
         <div class="container">
             &copy; 2025 - Day1 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 6637ba3848b8a5abbbf0993260116f21b21a1fa6
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

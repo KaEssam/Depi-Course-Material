@@ -5,7 +5,11 @@ using TMS.App.Interface.Services;
 
 namespace TMS.APIs.Controllers
 {
+<<<<<<< HEAD
     [Authorize]
+=======
+    //[Authorize]
+>>>>>>> 6637ba3848b8a5abbbf0993260116f21b21a1fa6
     [Route("api/[controller]")]
     [ApiController]
     public class TasksController : ControllerBase
@@ -18,7 +22,11 @@ namespace TMS.APIs.Controllers
         }
 
 
+<<<<<<< HEAD
         [Authorize]
+=======
+        //[Authorize(Roles ="Admin")]
+>>>>>>> 6637ba3848b8a5abbbf0993260116f21b21a1fa6
         [HttpGet]   
         public async Task<ActionResult<IEnumerable<TaskDto>>> GetTasks()
         {

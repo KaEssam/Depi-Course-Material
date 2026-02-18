@@ -7,6 +7,7 @@
 
 <h1>@ViewData["Title"]</h1>
 
+<<<<<<< HEAD
 
 <form asp-controller="Tasks" asp-action="Save" method= "post">
 
@@ -22,4 +23,13 @@
 
     <input type="submit" value="Create" />
 
+=======
+<form action="/Tasks/Create" method="post">
+    <div>
+        <label for="Title" class="mb-3">Task Title:</label>
+        <input type="text" name="Title" id="Title" value="" placeholder="Enter Task Title"/>
+    </div>
+
+    <button type="submit">Create Task</button>
+>>>>>>> 6637ba3848b8a5abbbf0993260116f21b21a1fa6
 </form>

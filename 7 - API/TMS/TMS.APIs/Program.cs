@@ -8,7 +8,10 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Microsoft.OpenApi.Models;
+<<<<<<< HEAD
 using YourProject.Services;
+=======
+>>>>>>> 6637ba3848b8a5abbbf0993260116f21b21a1fa6
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +23,7 @@ builder.Services.AddScoped<ITaskRepository, TaskRepository>();
 builder.Services.AddScoped<ITaskService, TaskService>();
 builder.Services.AddScoped<IUserRepository,UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
+<<<<<<< HEAD
 builder.Services.AddScoped<GoogleMeetService>();
 
 // Add CORS policy
@@ -32,6 +36,8 @@ builder.Services.AddCors(options =>
               .AllowAnyMethod();
     });
 });
+=======
+>>>>>>> 6637ba3848b8a5abbbf0993260116f21b21a1fa6
 
 var jwtSettings = builder.Configuration.GetSection("JwtSettings");
 
@@ -100,6 +106,7 @@ builder.Services.AddSwaggerGen(c => {
 
 var app = builder.Build();
 
+<<<<<<< HEAD
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -108,6 +115,12 @@ if (app.Environment.IsDevelopment())
 
 // Use CORS
 app.UseCors("AllowSwaggerUI");
+=======
+
+    app.UseSwagger();
+    app.UseSwaggerUI();
+
+>>>>>>> 6637ba3848b8a5abbbf0993260116f21b21a1fa6
 
 app.UseHttpsRedirection();
 app.UseAuthentication();
